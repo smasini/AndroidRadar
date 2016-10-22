@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RadarView">
+        <attr name="radar_background" format="reference" />
+        <attr name="load_async_image" format="boolean" />
+        <attr name="max_distance" format="integer" />
+        <attr name="pins_radius" format="integer" />
+        <attr name="center_pin_radius" format="integer" />
+        <attr name="pins_color" format="color" />
+        <attr name="center_pin_color" format="color" />
+        <attr name="pins_image" format="reference" />
+        <attr name="background_color" format="color" />
+        <attr name="arrow_color" format="color" />
+        <attr name="center_pin_image" format="reference" />
+    </declare-styleable>
+</resources>

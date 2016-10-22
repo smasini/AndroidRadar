@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="it.smasini.androidradar.MainActivity">
+
+    <it.smasini.radar.RadarView
+        app:load_async_image="true"
+        app:center_pin_color="#00FFFFFF"
+        app:background_color="#00FFFFFF"
+        app:arrow_color="#4CAF50"
+        app:pins_radius="100"
+        android:id="@+id/radar_view"
+        app:radar_background="@drawable/radar_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</RelativeLayout>
