@@ -1,6 +1,11 @@
 # AndroidRadar
 Android library for a radar view with scan and load points as image or colored circle
 
+<p align="center">
+<img width='30%' src="https://github.com/smasini/AndroidRadar/blob/master/screen1.png"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img width='30%' src="https://github.com/smasini/AndroidRadar/blob/master/screen2.png"/>
+</p>
+
 ### Download:
 
 Add this to your gradle file:
