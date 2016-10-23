@@ -5,7 +5,7 @@ Android library for a radar view with scan and load points as image or colored c
 
 Add this to your gradle file:
 ```java
-	  compile 'it.smasini:android-radar:1.0'
+    compile 'it.smasini:android-radar:1.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
 ```
 We need picasso for loading image.
@@ -36,7 +36,7 @@ In the activity we need to set a reference point, and then we can call method fo
 ```java
     radarView.setReferencePoint(new RadarPoint("center", 44.139644f,12.246429f));
 
-	  radarView.startAnimation();
+    radarView.startAnimation();
     radarView.stopAnimation();
 ```
 
