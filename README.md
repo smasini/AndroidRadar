@@ -16,18 +16,17 @@ In your xml add the RadarView, like this:
 ```xml
 	<?xml version="1.0" encoding="utf-8"?>
 	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	    xmlns:app="http://schemas.android.com/apk/res-auto"
-	    >
+	    xmlns:app="http://schemas.android.com/apk/res-auto">
 	    <it.smasini.radar.RadarView
-        app:load_async_image="true"
-        app:center_pin_color="#000000"
-        app:background_color="#FFFFFF"
-        app:arrow_color="#4CAF50"
-        app:pins_radius="100"
-        android:id="@+id/radar_view"
-        app:radar_background="@drawable/radar_background"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        	app:load_async_image="true"
+        	app:center_pin_color="#000000"
+        	app:background_color="#FFFFFF"
+        	app:arrow_color="#4CAF50"
+        	app:pins_radius="100"
+        	android:id="@+id/radar_view"
+        	app:radar_background="@drawable/radar_background"
+        	android:layout_width="match_parent"
+        	android:layout_height="wrap_content"/>
 	</LinearLayout>
 ```
 
