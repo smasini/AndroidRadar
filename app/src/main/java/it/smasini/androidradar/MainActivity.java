@@ -1,6 +1,5 @@
 package it.smasini.androidradar;
 
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -26,13 +25,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startAll();
-            }
-        });
-        radarView.setBitmapChangerListener(new RadarView.BitmapChangerListener() {
-            @Override
-            public Bitmap changeBitmap(Bitmap bitmap) {
-                //you can change bitmap here, for example for make round corner
-                return bitmap;
             }
         });
         radarView.setOnRadarPinClickListener(new RadarView.OnRadarPinClickListener() {

@@ -3,7 +3,6 @@ package it.smasini.radar;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.util.AttributeSet;
@@ -15,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.RequestCreator;
+import com.squareup.picasso.Transformation;
 
 import java.util.ArrayList;
 
@@ -24,7 +25,7 @@ import java.util.ArrayList;
 public class RadarView extends RelativeLayout {
 
     private OnRadarPinClickListener onRadarPinClickListener;
-    private BitmapChangerListener bitmapChangerListener;
+    private Transformation picassoTransformation;
     private ArrayList<RadarPoint> points = new ArrayList<RadarPoint>();
     private ImageView imageViewBackground;
     private Radar radar;
@@ -172,12 +173,22 @@ public class RadarView extends RelativeLayout {
         }
         if(loadImageAsyncWithPicasso){
             for(RadarPoint rp : points){
-                picasso.load(rp.getImageUrl()).into(new RadarPointTarget(rp, bitmapChangerListener) {
+                RequestCreator rc = picasso.load(rp.getImageUrl());
+                if(picassoTransformation!=null){
+                    rc.transform(picassoTransformation);
+                }
+                rc.into(new RadarPointTarget(rp) {
                     @Override
                     public void bitmapLoaded(boolean error) {
                         checkComplete();
                     }
                 });
+                /*picasso.load(rp.getImageUrl()).into(new RadarPointTarget(rp) {
+                    @Override
+                    public void bitmapLoaded(boolean error) {
+                        checkComplete();
+                    }
+                });*/
             }
         }else{
             checkComplete();
@@ -226,12 +237,8 @@ public class RadarView extends RelativeLayout {
         return true;
     }
 
-    public void setBitmapChangerListener(BitmapChangerListener bitmapChangerListener) {
-        this.bitmapChangerListener = bitmapChangerListener;
-    }
-
-    public interface BitmapChangerListener{
-        Bitmap changeBitmap(Bitmap bitmap);
+    public void setPicassoTransformation(Transformation picassoTransformation) {
+        this.picassoTransformation = picassoTransformation;
     }
 
     public interface OnRadarPinClickListener{

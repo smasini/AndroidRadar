@@ -12,25 +12,16 @@ import com.squareup.picasso.Target;
  */
 public abstract class RadarPointTarget implements Target {
 
-    private RadarView.BitmapChangerListener bitmapChangerListener;
     private RadarPoint radarPoint;
 
     public RadarPointTarget(RadarPoint radarPoint) {
         this.radarPoint = radarPoint;
     }
 
-    public RadarPointTarget(RadarPoint radarPoint, RadarView.BitmapChangerListener bitmapChangerListener) {
-        this.radarPoint = radarPoint;
-        this.bitmapChangerListener = bitmapChangerListener;
-    }
 
     @Override
     public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
-        if(bitmapChangerListener!=null){
-            radarPoint.setBitmap(bitmapChangerListener.changeBitmap(bitmap));
-        }else{
-            radarPoint.setBitmap(bitmap);
-        }
+        radarPoint.setBitmap(bitmap);
         bitmapLoaded(false);
     }
 
